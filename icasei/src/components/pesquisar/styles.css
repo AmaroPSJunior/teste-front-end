@@ -2,7 +2,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
-    background-color: aquamarine
+    background-color: rgba(90, 121, 150, 0.39);
+    position: relative;
+    height: 10vh;
 }
 

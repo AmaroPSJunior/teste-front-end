@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import Pesquisar from './components/pesquisar';
-import './styles.css'
+import Main from './pages/main';
+import './styles.css';
 
 const App = () => (
   <div className="App">
     <Pesquisar />
+    <Main />
   </div>
 );
 
