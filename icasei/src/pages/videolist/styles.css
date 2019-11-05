@@ -1,0 +1,38 @@
+
+
+.video-list article {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    background: #fff;
+    width: 100%;
+}
+
+.video-list .actions {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.video-list .actions button {
+    position: relative;
+    padding: 10px;
+    border-radius:  5px;
+    border: 0;
+    background: #22569e;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    top: 10px
+}
+
+.video-list .actions button:hover {
+    opacity: 0.7;
+}

@@ -2,8 +2,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(90, 121, 150, 0.39);
+    background-color: #3c649c;
     position: relative;
     height: 10vh;
+    color: #fff;
 }
 
