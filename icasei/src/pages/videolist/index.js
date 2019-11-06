@@ -4,60 +4,47 @@ import './styles.css';
 
 export default class Main extends Component {
     state = {
-        videos: [],
-        itemsPorPage: 4,
+        itemsPorPage: 2,
+        itemList: 0,
         palavra: 'livros',
+        videos: [],
         videoInfo:[],
         pageTotal: 1,
     }
-    
 
     componentDidMount(){
-        this.loadVideos();
+        this.loadVideos(this.state.itemsPorPage);
     }
 
-    loadVideos = async () => {
-
+    loadVideos = async (itemsPorPage) => {
         const API_KEY = 'AIzaSyCSPt7RrrXphB12hLWE5TChG0AgWtE1GRg';
         const params = {
             key: API_KEY,
             part: 'id,snippet',
             q: this.state.palavra,
-            maxResults: this.state.itemsPorPage
+            maxResults: itemsPorPage
         };
         
         const response = await api.get('/search', { params });
-        const { pageInfo, ...videoInfo} = response.data;
-   
-        const pageTotal = pageInfo.totalResults / pageInfo.resultsPerPage
-        console.log('pageTotal', pageTotal);
+     
+        const { pageInfo, items, ...videoInfo} = response.data;
 
-        this.setState({ videos: response.data.items, videoInfo })   
-
-
-
-
+        this.setState({ 
+            videos: response.data.items, 
+            videoInfo, 
+            itemList: pageInfo.resultsPerPage
+        })   
 
         console.log('searchParams', response);
         console.log('pageInfo', pageInfo);
         console.log('videoInfo', videoInfo);
     };
 
-    prevPage = () => {}
-    nextPage = () => {
-        const { itemsPage, videoInfo } = this.state;
+    nextResult = () => {
+        
+        const { itemsPorPage, itemList } = this.state;
 
-        if (itemsPage === videoInfo.resultsPerPage) {
-            console.log('true');
-        } else {
-            console.log('false');
-        }
-
-        const { itemsPorPage } = this.state;
-
-        itemsPorPage = itemsPorPage + 10;
-
-        console.log(itemsPorPage);
+        this.loadVideos(itemList + itemsPorPage);   
     }
     
     render(){
@@ -74,8 +61,7 @@ export default class Main extends Component {
 
                 <footer>
                     <div className='actions'>
-                        <button onClick={this.prevPage}>Anterior</button>
-                        <button onClick={this.nextPage}>Próxima</button>
+                        <button onClick={this.nextResult}>Próxima</button>
                     </div>
                 </footer>
             </div>
