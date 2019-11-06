@@ -1,0 +1,43 @@
+
+.video-list {
+    height: calc( 62% - 122px);
+    position: relative;
+    
+    article {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    footer {
+        position: fixed;
+        bottom: 0;
+        background: #fff;
+        width: 100%;
+        padding: 10px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+
+        Button {
+            position: relative;
+            padding: 10px;
+            border-radius:  5px;
+            border: 0;
+            background: #22569e;
+            color: rgb(255, 255, 255);
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        
+            &:hover {
+                opacity: 0.7;
+            }
+            
+        }
+    }
+}
+

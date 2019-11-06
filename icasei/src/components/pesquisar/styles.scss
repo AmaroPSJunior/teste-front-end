@@ -1,10 +1,23 @@
+
 #pesquisar {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #3c649c;
     position: relative;
     height: 10vh;
     color: #fff;
+
+
+
+    input {
+        width: 100% !important;
+    }
+
+    i {
+        position: relative;
+        color: #000;
+        right: 30px;
+    }
+    
 }
 

@@ -1,0 +1,17 @@
+
+
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+
+    input {
+        width: 100% !important;
+    }
+    
+    i {
+        position: relative;
+        right: 35px !important;
+    }
+}

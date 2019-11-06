@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
 import api from '../../services/api.js';
-import './styles.css';
+import './styles.scss';
+
+//import {MDCRipple} from '@material/ripple';
+//const buttonRipple = new MDCRipple(document.querySelector('.mdc-button'));
+import Button from '@material-ui/core/Button';
 
 export default class Main extends Component {
     state = {
-        itemsPorPage: 2,
+        itemsPorPage: 3,
         itemList: 0,
         palavra: 'livros',
         videos: [],
@@ -17,7 +21,7 @@ export default class Main extends Component {
     }
 
     loadVideos = async (itemsPorPage) => {
-        const API_KEY = 'AIzaSyCSPt7RrrXphB12hLWE5TChG0AgWtE1GRg';
+        const API_KEY = 'AIzaSyBkzwAe9cLdtzxXl-wDOV_xo6gcQPnt_RU';
         const params = {
             key: API_KEY,
             part: 'id,snippet',
@@ -60,12 +64,9 @@ export default class Main extends Component {
                 )) }
 
                 <footer>
-                    <div className='actions'>
-                        <button onClick={this.nextResult}>Próxima</button>
-                    </div>
+                    <Button onClick={this.nextResult} variant="contained" color="primary">mais</Button>
                 </footer>
             </div>
         )
-        
     }
 }
