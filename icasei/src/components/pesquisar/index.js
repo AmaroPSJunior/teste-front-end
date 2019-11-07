@@ -8,7 +8,6 @@ const Pesquisar = () => (
     <div>
         <div id='pesquisar'>
             <Inputs />
-            
         </div>
         <div id='results'></div>
     </div>
